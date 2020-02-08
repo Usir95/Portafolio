@@ -71,7 +71,7 @@
         </form>
     </div>
 
-    <div id="contact_button"></div>
+    <div id="contact_button" onclick="displayFormContact('block')"></div>
 
     <script>
 
@@ -189,6 +189,12 @@ function alertSize() {
         }
         setColors(i);
     }
+    
+    function displayFormContact(status){
+        var form = document.getElementById("contact_form");
+        form.style.display = status;        
+    }
+
     </script>
 </body>
 </html>
