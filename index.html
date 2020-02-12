@@ -37,7 +37,7 @@
                     <li> <a onclick="navSection('skills')" href="#">Skills</a></li>
                     <li> <a onclick="navSection('portafolio')" href="#">Portafolio</a></li>
                     <li> <a onclick="navSection('blog')" href="#">Blog</a></li>
-                    <li><a  href="#">Contacto</a></li> 
+                    <li><a onclick="displayFormContact('block')" href="#">Contacto</a></li> 
                 </ul>
             </div>
         </nav>
@@ -47,7 +47,23 @@
     </header>
     
     <div id="slider">
-        <section class="slide" id="home" style="display: block;"></section>
+        <section class="slide" id="home" style="display: block;">
+        
+            <div class="mainAnimation">
+                <div id="particles-js"></div>
+            </div>
+
+            <div class="mainLogo">
+                <h2>Soy un<strong> Desarrollador  </strong></h2>
+                <figure><img src="img/logo.png" alt=""></figure>
+            </div>
+
+            <div class="buttonspage">
+                <div id="contratame" onclick="displayFormContact('block')">CONTRATAME</div>
+                <a href="docs/" target="_blank">DESCARGAR CV</a>
+            </div>
+        </section>
+        
         <section class="slide" id="aboutme" style="display: none;"></section>
         <section class="slide" id="skills" style="display: none;"></section>
         <section class="slide" id="portafolio" style="display: none;"></section>
@@ -56,7 +72,7 @@
 
     <div id="contact_form">
         <form action="contact.php" id="form1" method="POST">
-            <div id="close_form"></div>
+            <div id="close_form" onclick="displayFormContact('none')"></div>
             <figure id="logo_mensaje">
                 <img src="img/sobre2.png" alt="">
             </figure>
@@ -72,6 +88,20 @@
     </div>
 
     <div id="contact_button" onclick="displayFormContact('block')"></div>
+
+    <footer>
+
+        <div class="rrss">
+            <a href="#"></a>
+            <a href="#"></a>
+            <a href="#"></a>
+            <a href="#"></a>
+        </div>
+        <p>© 2020 COPYRIGHT</p>
+    </footer>
+
+    <script src="lib/js/particles.js"></script>
+    <script src="lib/js/app.js"></script>
 
     <script>
 
@@ -162,7 +192,6 @@ function alertSize() {
         }
     }
 
-
     function displaySection(nav) {
         var search;
         var show;
@@ -192,9 +221,8 @@ function alertSize() {
     
     function displayFormContact(status){
         var form = document.getElementById("contact_form");
-        form.style.display = status;        
+        form.style.display = status;
     }
-
     </script>
 </body>
 </html>
